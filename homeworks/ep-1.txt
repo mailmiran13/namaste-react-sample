@@ -1,0 +1,19 @@
+what is cdn? why we use it?
+what is cross-origin?
+how browsers know the javascript functions?
+what is react? react is js library.
+facebook developers write react code.
+
+how to get react in our project?
+add below source code 
+react source code. it is core react code- https://unpkg.com/react@18/umd/react.development.js
+
+acts like bridge to core module
+https://unpkg.com/react-dom@18/umd/react-dom.development.js
+it is used for dom - document object model manipulation in browser.
+
+
+
+
+react works on mobile ph and browsers - so different files/
+like react native react 3d
