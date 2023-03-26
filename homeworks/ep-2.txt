@@ -1,0 +1,55 @@
+npm - is not node package manager but it manages packages for us
+to install package.json - do npm init ; provide all inputs to it.
+package.json is configuration for npm. has approx version by using ~ n ^.
+
+bundlers are most imp package. whole code needs to be cleaned/compressed/bundled/packaged/minified/chunking
+so code can be shipped to prod
+webpack/parcel/vite - name of bundlers
+npm install -D <package name>
+2 types of dependencies/packages - dev dependencies and normal dependencies
+dev - required in developmemt phase
+normal - used in prod too
+
+~ - tilde “Approximately equivalent to version”, will update you to all future patch versions, without incrementing the minor version.
+          ~1.2.3 will use releases from 1.2.3 to <1.3.0.
+^ - caret “Compatible with version”, will update you to all future minor/patch versions, without incrementing the major version.
+          ^2.3.4 will use releases from 2.3.4 to <3.0.0.
+example
+Patch releases: 1.0 or 1.0.x or ~1.0.4
+Minor releases: 1 or 1.x or ^1.0.4
+
+package.lock.json keeps a record of exact version of package installed.
+integrety is hash of sha512 versions of packages
+node modules - contains all the code that fetched from npm for packages in package.json file.
+is like database for dependencies/packages.
+collection of packages
+apart from parcel why others code folders got installed - because of transitive dependencies.
+it is code dependencies of parcel and in turn that code dependencies and that code dependencies
+project - parcel - d1- d2 - d3 - ...d999
+
+babel/browserslist/parcel - all folders are needed. none is garbage.
+how will npm know parcel dependencies? -
+every package has its own package.json file - check it out inside node modules folder.
+
+dont push node modules to github/prod. put it inside git ignore file.
+push package.json/package.lock.json to github. they maintain approx/exact version and integrity of each dependencies.
+regenerate node-modules/packages via npm install on server.
+because i have package.json/package.lock.json files.
+referring this we can install the packages again.
+
+put essentials things in github bnot things which can be regenerated
+
+npx parcel index.html
+parcel created a server for us and given a port 1234. code is running on server now.
+npx - executing a package
+cdn is not a good way to fetch react. avoid hhtp network call. react version manageable
+parcel functions - dev build/loacl server/ app host/ HMR - hot module replacement/
+parcel uses file watching algo written in c++/ caching so build is faster
+image optimization minify n bundle
+
+compress the files/consistent hashing/code splitting/differential bundling -support of older browsers
+diagnostic of issues like error handling
+https hosting/ tree shaking algo - remove unused code
+different deb and prod build,
+
+when using parcel main property not needed in package.json file. dince we give the entry point in command
